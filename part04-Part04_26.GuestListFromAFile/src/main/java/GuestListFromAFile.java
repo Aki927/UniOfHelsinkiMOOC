@@ -1,7 +1,10 @@
 
+import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class GuestListFromAFile {
 
@@ -12,7 +15,15 @@ public class GuestListFromAFile {
         String file = scanner.nextLine();
 
         ArrayList<String> list = new ArrayList<>();
-        // implement reading the file here.
+        
+        // implement reading the file here.        
+        try ( Scanner scan = new Scanner(Paths.get(file))) {
+            while (scan.hasNextLine()) {
+                String row = scan.nextLine();
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(GuestListFromAFile.class.getName()).log(Level.SEVERE, null, ex);
+        }
         System.out.println("");
 
         System.out.println("Enter names, an empty line quits.");
