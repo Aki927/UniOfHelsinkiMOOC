@@ -3,8 +3,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GuestListFromAFile {
 
@@ -20,9 +18,10 @@ public class GuestListFromAFile {
         try ( Scanner scan = new Scanner(Paths.get(file))) {
             while (scan.hasNextLine()) {
                 String row = scan.nextLine();
+                list.add(row);
             }
         } catch (IOException ex) {
-            Logger.getLogger(GuestListFromAFile.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Error: " + ex);
         }
         System.out.println("");
 
