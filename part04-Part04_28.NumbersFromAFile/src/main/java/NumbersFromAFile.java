@@ -18,7 +18,7 @@ public class NumbersFromAFile {
 
     }
     
-    public static int countNumInRange(String file, int lowerBound, int upperBound){
+    public static int countNumInRange(String file, int lowerBound, int upperBound) {
         String row;
         int numCounter = 0;
         
@@ -35,5 +35,4 @@ public class NumbersFromAFile {
         }
         return numCounter;
     }
-
 }
